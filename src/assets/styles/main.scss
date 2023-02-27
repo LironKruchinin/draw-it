@@ -1,2 +1,10 @@
+// Setup
+@import "./setup/variables";
+
+// Basics
+@import "./basics/layout";
+@import "./basics/base";
+
+
 ///home-page///
 @import "./views/homepage";
