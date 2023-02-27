@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const CreateLoby: React.FC = () => {
   return (
@@ -7,6 +8,9 @@ export const CreateLoby: React.FC = () => {
         <input type="text" placeholder="Nickname" />
       </article>
       <article className="modes"></article>
+      <Link to='/draw'>Draw test</Link>
+
     </section>
+
   );
 };
