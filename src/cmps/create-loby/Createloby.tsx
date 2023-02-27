@@ -6,8 +6,19 @@ export const CreateLoby: React.FC = () => {
     <section className="create_loby_container">
       <article className="player_details">
         <input type="text" placeholder="Nickname" />
+        <div className="go_btn">Go!</div>
       </article>
-      <article className="modes"></article>
+      <article className="modes_section">
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+        <div className="single_mode"></div>
+      </article>
       <Link to='/draw'>Draw test</Link>
 
     </section>

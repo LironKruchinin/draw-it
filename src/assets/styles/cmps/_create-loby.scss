@@ -8,8 +8,23 @@
 
   .player_details {
     display: flex;
+    margin-left: 100px;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+  }
+
+  .go_btn {
+    color: white;
+    background-color: black;
+    height: 55px;
+    width: 100px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    margin-left: -10px;
+    cursor: pointer;
   }
 
   input {
@@ -17,11 +32,36 @@
     border: 1px solid gray;
     width: 300px;
     height: 50px;
+    border-radius: 5px;
+    border-right: none;
+    background-color: white;
   }
 
-  .modes {
-    height: 100%;
-    width: 200px;
-    border-left: 1px solid black;
+  .modes_section {
+    width: 60vw;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    margin: auto;
+    padding: 0 40px;
+  }
+
+  .single_mode {
+    background-color: gray;
+    margin: auto;
+    width: 13vw;
+    height: 10vw;
+  }
+
+  ///MEDIA QUERIES///
+
+  @media screen and (max-width: 1290px) {
+    .single_mode {
+      width: 10vw;
+      height: 10vw;
+    }
   }
 }
