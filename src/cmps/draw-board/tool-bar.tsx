@@ -1,3 +1,10 @@
+import { setShape } from "../../services/drawBoard"
+
 export function ToolBar() {
-    return <h2>toolbar</h2>
+    return (
+        <section>
+            <button onClick={() => setShape('square')}>Square</button>
+            <button onClick={() => setShape('circle')}>Circle</button>
+        </section>
+    )
 }

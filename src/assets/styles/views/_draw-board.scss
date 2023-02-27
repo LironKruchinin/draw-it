@@ -1,0 +1,13 @@
+.canvas-container {
+    background-color: lightblue;
+    width: 85%;
+    height: 85%;
+
+    canvas {
+        display: block;
+        outline: 1px solid black;
+        background-color: white;
+        width: 80%;
+        margin: 1px 0 30px 1px;
+    }
+}
