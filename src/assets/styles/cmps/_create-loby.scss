@@ -1,0 +1,27 @@
+.create_loby_container {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightcoral;
+
+  .player_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input {
+    outline: none;
+    border: 1px solid gray;
+    width: 300px;
+    height: 50px;
+  }
+
+  .modes {
+    height: 100%;
+    width: 200px;
+    border-left: 1px solid black;
+  }
+}
