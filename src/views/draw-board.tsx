@@ -17,14 +17,14 @@ export function DrawBoard() {
             return
         }
 
-        const context = canvas.getContext('2d')
-        if (!context) {
-            return
-        }
+    const context = canvas.getContext("2d");
+    if (!context) {
+      return;
+    }
 
-        context.fillStyle = 'black'
-        context.fillRect(0, 0, 100, 100)
-    }, [])
+    context.fillStyle = "black";
+    context.fillRect(0, 0, 100, 100);
+  }, []);
 
     return (
         <section className="canvas-container">
