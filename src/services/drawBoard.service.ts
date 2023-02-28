@@ -8,11 +8,11 @@ export function setShape(shape: string) {
 }
 
 function drawCircle(x: number, y: number, gCtx: any) {
-    console.log('circle', x, y, gCtx);
+    console.log('circle', x, y, gCtx)
 }
 
 function drawSquare(x: number, y: number, gCtx: any) {
-    console.log('square', x, y, gCtx);
+    console.log('square', x, y, gCtx)
     gCtx.beginPath()
 
     gCtx.fillStyle = 'orange'

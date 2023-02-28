@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from "react"
+import { useNavigate } from "react-router"
+
+
 import { Chat } from "../cmps/draw-board/chat"
 import { ToolBar } from "../cmps/draw-board/tool-bar"
 import { draw } from "../services/drawBoard.service"
 
 export function DrawBoard() {
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -29,6 +33,7 @@ export function DrawBoard() {
                 <Chat />
             </div>
             <ToolBar />
+            <button onClick={() => navigate(-1)} style={{ backgroundColor: 'red' }}>Go back</button>
         </section>
     )
 }
