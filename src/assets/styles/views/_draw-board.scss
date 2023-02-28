@@ -1,13 +1,22 @@
 .canvas-container {
     background-color: lightblue;
-    width: 85%;
     height: 85%;
 
-    canvas {
-        display: block;
-        outline: 1px solid black;
-        background-color: white;
-        width: 80%;
-        margin: 1px 0 30px 1px;
+    .main-content {
+        display: flex;
+
+        aside {
+            flex-basis: 60%;
+            min-width: 90px;
+        }
+
+        canvas {
+            display: block;
+            outline: 1px solid black;
+            background-color: white;
+            margin: 1px 0 30px 1px;
+            flex-basis: 40%;
+        }
     }
+
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react"
+import { Chat } from "../cmps/draw-board/chat"
 import { ToolBar } from "../cmps/draw-board/tool-bar"
-import { draw } from "../services/drawBoard"
+import { draw } from "../services/drawBoard.service"
 
 export function DrawBoard() {
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -23,7 +24,10 @@ export function DrawBoard() {
 
     return (
         <section className="canvas-container">
-            <canvas width={1000} height={500} ref={canvasRef} onClick={(event) => draw(event, canvasRef)} />
+            <div className="main-content">
+                <canvas width={1000} height={600} ref={canvasRef} onClick={(event) => draw(event, canvasRef)} />
+                <Chat />
+            </div>
             <ToolBar />
         </section>
     )

@@ -1,4 +1,4 @@
-import { setShape } from "../../services/drawBoard"
+import { setShape } from "../../services/drawBoard.service"
 
 export function ToolBar() {
     return (
