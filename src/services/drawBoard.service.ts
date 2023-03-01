@@ -1,6 +1,8 @@
 let currShape = 'circle'
 let currColor = 'black'
 let gCtx
+let gCanvas: HTMLElement
+let isMouseDown = false
 
 export function setShape(shape: string) {
     currShape = shape
@@ -8,22 +10,32 @@ export function setShape(shape: string) {
 }
 
 function drawCircle(x: number, y: number, gCtx: any) {
-    console.log('circle', x, y, gCtx)
+
+    gCtx.beginPath();
+    gCtx.arc(x, y, 50, 0, 2 * Math.PI);
+    gCtx.fillStyle = 'black'
+    gCtx.stroke();
+    // console.log('circle', x, y, gCtx)
+
 }
 
+// function handleMouseEvent() {
+//     document.addEventListener('mousedown')
+// }
+
+
 function drawSquare(x: number, y: number, gCtx: any) {
-    console.log('square', x, y, gCtx)
     gCtx.beginPath()
 
-    gCtx.fillStyle = 'orange'
-    gCtx.fillRect(x, y, 150, 150)
-    gCtx.strokeStyle = 'black'
-    gCtx.strokeRect(x, y, 150, 150)
+    gCtx.fillStyle = 'black'
+    gCtx.fillRect(x, y, 30, 30)
 }
 
 export function draw(ev: React.MouseEvent, canvasRef: any) {
+    isMouseDown = true
     const { clientX, clientY } = ev
     const canvas = canvasRef.current
+    gCanvas = canvas
     if (!canvas) {
         return
     }
@@ -31,6 +43,8 @@ export function draw(ev: React.MouseEvent, canvasRef: any) {
     if (!gCtx) {
         return
     }
+
+
 
     let clickX = clientX - canvas.offsetLeft
     let clickY = clientY - canvas.offsetTop
@@ -45,4 +59,8 @@ export function draw(ev: React.MouseEvent, canvasRef: any) {
             break
 
     }
+}
+
+export function clearBoard() {
+    console.log('hello');
 }
