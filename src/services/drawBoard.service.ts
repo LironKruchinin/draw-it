@@ -12,8 +12,12 @@ export function setShape(shape: string) {
 function drawCircle(x: number, y: number, gCtx: any) {
 
     gCtx.beginPath();
-    gCtx.arc(x, y, 50, 0, 2 * Math.PI);
-    gCtx.fillStyle = 'black'
+    gCtx.arc(x, y, 20, 0, 2 * Math.PI);
+    // gCtx.fillStyle = 'black'
+    gCtx.fillStyle = 'green';
+    gCtx.strokeStyle = 'green';
+    gCtx.stroke();
+    gCtx.fill();
     gCtx.stroke();
     // console.log('circle', x, y, gCtx)
 
@@ -23,6 +27,10 @@ function drawCircle(x: number, y: number, gCtx: any) {
 //     document.addEventListener('mousedown')
 // }
 
+
+export function clearBoard() {
+    console.log('hello')
+}
 
 function drawSquare(x: number, y: number, gCtx: any) {
     gCtx.beginPath()
@@ -59,8 +67,4 @@ export function draw(ev: React.MouseEvent, canvasRef: any) {
             break
 
     }
-}
-
-export function clearBoard() {
-    console.log('hello');
 }
