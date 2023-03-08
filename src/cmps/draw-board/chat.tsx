@@ -1,3 +1,9 @@
 export function Chat() {
-    return <aside>Hello</aside>
+    return (
+        <aside>
+            <form action="">
+                <input type="text" />
+            </form>
+        </aside>
+    )
 }

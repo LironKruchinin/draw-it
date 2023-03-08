@@ -1,5 +1,5 @@
 let currShape = 'circle'
-let currColor = 'black'
+export let currColor = 'black'
 let gCtx
 let gCanvas: HTMLElement
 let isMouseDown = false
@@ -20,6 +20,12 @@ function drawCircle(x: number, y: number, gCtx: any) {
     gCtx.fill();
     gCtx.stroke();
     // console.log('circle', x, y, gCtx)
+
+}
+
+export function changeColor(ev: any) {
+    currColor = ev.target.value
+    console.log(currColor);
 
 }
 
@@ -59,7 +65,7 @@ export function draw(ev: React.MouseEvent, canvasRef: any) {
     // console.log('x:', canvas.offsetLeft, 'y:', canvas.offsetTop)
     // console.log('ClickX:', clickX, 'ClickY:', clickY)
     switch (currShape) {
-        case 'circle':
+        case 'brush':
             drawCircle(clickX, clickY, gCtx)
             break
         case 'square':
