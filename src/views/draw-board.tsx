@@ -10,7 +10,19 @@ export function DrawBoard() {
     const navigate = useNavigate()
     const [isDrawing, setIsDrawing] = useState(false)
     const [lastPosition, setLastPosition] = useState<{ x: number, y: number } | null>(null)
-    const [color, setColor] = useState('black')
+    const [color, setColor] = useState(currColor)
+
+    useEffect(() => {
+        const canvas = canvasRef.current
+        if (!canvas) return
+
+        const context = canvas.getContext('2d')
+        if (!context) return
+        context.lineWidth = 5
+        context.lineCap = 'round'
+        context.strokeStyle = color
+        console.log(color);
+    }, [color])
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -23,10 +35,7 @@ export function DrawBoard() {
         context.fillRect(0, 0, canvas.width, canvas.height)
 
         // Set up the drawing styles
-        context.lineWidth = 5
-        context.lineCap = 'round'
-        context.strokeStyle = color
-        console.log(color);
+
 
     }, [])
 
@@ -76,7 +85,7 @@ export function DrawBoard() {
                 />
                 <Chat />
             </div>
-            <ToolBar setColor={setColor} />
+            <ToolBar setColor={setColor} canvasRef={canvasRef} />
             <button onClick={() => navigate(-1)} style={{ backgroundColor: 'red' }}>Go back</button>
         </section>
     )

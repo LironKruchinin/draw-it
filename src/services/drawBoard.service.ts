@@ -1,5 +1,5 @@
 let currShape = 'circle'
-export let currColor = 'black'
+export let currColor = 'yellow'
 let gCtx
 let gCanvas: HTMLElement
 let isMouseDown = false
@@ -26,7 +26,6 @@ function drawCircle(x: number, y: number, gCtx: any) {
 export function changeColor(ev: any) {
     currColor = ev.target.value
     console.log(currColor);
-
 }
 
 // function handleMouseEvent() {
@@ -34,8 +33,11 @@ export function changeColor(ev: any) {
 // }
 
 
-export function clearBoard() {
-    console.log('hello')
+export function clearBoard(canvasRef: any) {
+    console.log('clear')
+    const canvas = canvasRef.current
+    gCtx = canvas.getContext('2d')
+    gCtx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 function drawSquare(x: number, y: number, gCtx: any) {
