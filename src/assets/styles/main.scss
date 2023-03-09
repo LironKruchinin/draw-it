@@ -1,0 +1,17 @@
+// Setup
+@import "./setup/variables";
+
+// Basics
+@import "./basics/layout";
+@import "./basics/base";
+
+
+
+///home-page///
+@import "./views/homepage";
+@import "./cmps/create-loby";
+
+
+// Draw-board
+@import "./views/draw-board";
+@import "./cmps/draw-board/tool-bar";

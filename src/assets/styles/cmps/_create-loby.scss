@@ -1,0 +1,96 @@
+.create_loby_container {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+
+  background-color: lightcoral;
+
+  .player_details {
+    display: flex;
+    margin-left: 100px;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+  }
+
+  .go_btn {
+    color: white;
+    background-color: black;
+    height: 6vh;
+    width: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: -10px;
+    cursor: pointer;
+  }
+
+  input {
+    outline: none;
+    border: 1px solid gray;
+    width: 15vw;
+    min-width: 150px;
+    height: 5.5vh;
+    min-height: 40px;
+    border-radius: 5px;
+    border-right: none;
+    background-color: white;
+  }
+
+  .modes_section {
+    box-sizing: border-box;
+    max-width: 30vw;
+    height: 70vh;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .single_mode {
+    background-color: gray;
+    margin: 5px 10px;
+    width: 8vw;
+    height: 8vw;
+  }
+
+  ///MEDIA QUERIES///
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    .modes_section {
+      height: 40vh;
+      max-width: 70vw;
+      border: none;
+    }
+
+    .single_mode {
+      width: 15vw;
+      height: 15vw;
+    }
+
+    .player_details_container {
+      height: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .player_details {
+      display: flex;
+    }
+
+    input {
+      width: 30vw;
+    }
+  }
+}
