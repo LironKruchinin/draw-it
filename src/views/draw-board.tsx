@@ -3,7 +3,8 @@ import { useNavigate } from "react-router"
 
 import { Chat } from "../cmps/draw-board/chat"
 import { ToolBar } from "../cmps/draw-board/tool-bar"
-import { currColor, draw } from "../services/drawBoard.service"
+import { lineWitdh } from "../services/drawBoard.service"
+import { currColor } from "../services/color.service"
 
 export function DrawBoard() {
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -11,6 +12,7 @@ export function DrawBoard() {
     const [isDrawing, setIsDrawing] = useState(false)
     const [lastPosition, setLastPosition] = useState<{ x: number, y: number } | null>(null)
     const [color, setColor] = useState(currColor)
+    const [lineWidth, setLineWidth] = useState(lineWitdh)
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -18,11 +20,12 @@ export function DrawBoard() {
 
         const context = canvas.getContext('2d')
         if (!context) return
+
         context.lineWidth = 5
         context.lineCap = 'round'
         context.strokeStyle = color
-        console.log(color);
-    }, [color])
+        console.log(color)
+    }, [color, lineWidth])
 
     useEffect(() => {
         const canvas = canvasRef.current

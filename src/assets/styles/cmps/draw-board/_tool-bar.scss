@@ -1,0 +1,12 @@
+.tool-bar {
+    display: flex;
+
+    .color {
+        height: 30px;
+        width: 30px;
+    }
+
+    .color-pallet {
+        display: flex;
+    }
+}

@@ -1,14 +1,20 @@
-import { changeColor, clearBoard, currColor, setShape } from "../../services/drawBoard.service"
+import { BsFillTrashFill } from "react-icons/bs";
+
+import { clearBoard, } from "../../services/drawBoard.service"
+import { changeColor, currColor, colors } from "../../services/color.service"
 
 export function ToolBar({ setColor, canvasRef }: any) {
     return (
-        <section>
-            <button onClick={() => setShape('square')}>Square</button>
-            <button onClick={() => setShape('brush')}>Bursh</button>
-            <button onClick={() => clearBoard(canvasRef)}>Clear</button>
+        <section className="tool-bar">
+            <button onClick={() => clearBoard(canvasRef)}><BsFillTrashFill /></button>
             <input type="color" name="" id="" onChange={ev => { setColor(ev.target.value) }} />
-            <div style={{ height: '25px', width: '25px', backgroundColor: 'pink' }} onClick={() => { setColor('pink') }}></div>
-            <div style={{ height: '25px', width: '25px', backgroundColor: 'black' }} onClick={() => { setColor('black') }}></div>
+            <div className="color-pallet">
+                {colors.map(color => {
+                    return <div key={color} className="color"
+                        style={{ backgroundColor: `${color}` }}
+                        onClick={() => { setColor(color) }}></div>
+                })}
+            </div>
         </section>
     )
 }
